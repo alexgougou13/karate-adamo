@@ -65,14 +65,14 @@ const Contact: React.FC<ContactProps> = ({ labels }) => {
                 </h3>
                 <div className="flex justify-center space-x-6">
                   <a
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/profile.php?id=61579258452535"
                     target="_blank"
                     className="w-12 h-12 bg-black rounded-full flex items-center justify-center hover:scale-125 transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
                     <Facebook className="w-5 h-5 text-white" />
                   </a>
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/athos.karate/"
                     target="_blank"
                     className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:scale-125 transition-all duration-300 shadow-lg hover:shadow-xl"
                   >

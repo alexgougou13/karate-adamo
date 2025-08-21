@@ -1,7 +1,7 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import { Labels } from '../data/labels';
-import { images } from '../data/images';
+import React from "react";
+import { ArrowRight } from "lucide-react";
+import { Labels } from "../data/labels";
+import { images } from "../data/images";
 
 interface HeroProps {
   labels: Labels;
@@ -15,22 +15,29 @@ const Hero: React.FC<HeroProps> = ({ labels }) => {
   }, []);
 
   const scrollToAbout = () => {
-    const element = document.getElementById('about');
+    const element = document.getElementById("about");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      <div 
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
+    >
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
         style={{ backgroundImage: `url(${images.hero.background})` }}
       >
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
-      
-      <div className={`relative z-10 text-center text-white px-6 max-w-4xl mx-auto transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+
+      <div
+        className={`relative z-10 text-center text-white px-6 max-w-4xl mx-auto transform transition-all duration-1000 ${
+          isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+        }`}
+      >
         <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-white">
           {labels.hero.title}
         </h1>
@@ -48,8 +55,11 @@ const Hero: React.FC<HeroProps> = ({ labels }) => {
           <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-all duration-300" />
         </button>
       </div>
-      
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer" onClick={scrollToAbout}>
+
+      <div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
+        onClick={scrollToAbout}
+      >
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center hover:border-white transition-colors">
           <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
         </div>
