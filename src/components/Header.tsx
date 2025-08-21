@@ -28,16 +28,11 @@ const Header: React.FC<HeaderProps> = ({
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3 group">
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-red-600 to-red-800 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-lg">
-                <span className="text-white font-bold text-sm">空</span>
-              </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
-            </div>
-            <span className="text-xl font-bold text-gray-800 group-hover:text-red-600 transition-colors">
-              ΑΘΩΣ
-            </span>
-            <Zap className="w-4 h-4 text-yellow-500 animate-bounce" />
+            <img 
+              src="/logo.jpg" 
+              alt="ΑΘΩΣ Karate School Logo" 
+              className="h-12 w-auto object-contain transform group-hover:scale-110 transition-transform duration-300"
+            />
           </div>
 
           {/* Desktop Navigation */}
