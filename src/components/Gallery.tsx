@@ -32,22 +32,13 @@ const Gallery: React.FC<GalleryProps> = ({ labels }) => {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-red-900 relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-red-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-      </div>
-      
+    <section id="gallery" className="py-20 bg-black">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-block mb-6">
-            <div className="w-20 h-1 bg-gradient-to-r from-red-500 via-yellow-500 to-red-500 rounded-full mx-auto animate-pulse"></div>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 hover:text-red-400 transition-colors cursor-default">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             {labels.gallery.title}
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto hover:text-white transition-colors">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             {labels.gallery.subtitle}
           </p>
         </div>
@@ -56,16 +47,15 @@ const Gallery: React.FC<GalleryProps> = ({ labels }) => {
           {images.gallery.map((image, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl hover:shadow-red-500/50 transition-all duration-500 cursor-pointer transform hover:scale-105 hover:-rotate-1"
+              className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:scale-105"
               onClick={() => openLightbox(index)}
               onMouseEnter={() => setHoveredImage(index)}
               onMouseLeave={() => setHoveredImage(null)}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-yellow-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
               <img
                 src={image}
                 alt={`Gallery ${index + 1}`}
-                className="w-full h-48 object-cover group-hover:scale-125 group-hover:rotate-2 transition-all duration-500"
+                className="w-full h-48 object-cover group-hover:scale-110 transition-all duration-500"
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
               <div className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${hoveredImage === index ? 'opacity-100' : 'opacity-0'}`}>
@@ -73,7 +63,7 @@ const Gallery: React.FC<GalleryProps> = ({ labels }) => {
                   <span className="text-white text-xl">+</span>
                 </div>
               </div>
-              <div className="absolute bottom-2 right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute bottom-2 right-2 w-6 h-6 bg-white rounded-full flex items-center justify-center text-black text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {index + 1}
               </div>
             </div>
@@ -92,9 +82,9 @@ const Gallery: React.FC<GalleryProps> = ({ labels }) => {
               
               <button
                 onClick={closeLightbox}
-                className="absolute -top-2 -right-2 w-12 h-12 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
+                className="absolute -top-2 -right-2 w-12 h-12 bg-white hover:bg-gray-100 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
               >
-                <X className="w-6 h-6 text-white" />
+                <X className="w-6 h-6 text-black" />
               </button>
               
               <button
